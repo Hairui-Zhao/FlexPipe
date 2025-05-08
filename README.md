@@ -37,6 +37,7 @@ global_rank = int(os.environ["RANK"])
 ```
 
 ## Core Component (LFM)
+***Key Function (See in LFM/runtime.py)***
 
 ```def is_Transfer(iter)```
 
@@ -47,3 +48,6 @@ global_rank = int(os.environ["RANK"])
 ```def __recv_update(self,model,index)```
 
 ```def recv_weight(self,model,S_R_Pair)```
+
+***Example Usage***
+

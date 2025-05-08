@@ -12,7 +12,7 @@
 
 ```datasets = raw_datasets['train'].filter(lambda x: 'apache/spark' in x['repository_name'])```
 
-***Model(GPT)***
+***Model(GPT) (See in model/gpt_modeling.py)***
 
 ```class MaskedAttention(nn.Module)```
 

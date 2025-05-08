@@ -36,8 +36,7 @@ dist.init_process_group(backend="NCCL", timeout=datetime.timedelta(seconds=30)) 
 global_rank = int(os.environ["RANK"])
 ```
 
-## FlexPipe
-判断是否进行Elastic，并返回弹性策略
+## Core Component (LFM)
 
 ```def is_Transfer(iter)```
 

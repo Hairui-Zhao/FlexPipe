@@ -1,19 +1,10 @@
-# FlexPipe: Maximizing the Training Efficiency for Transformer-based models with Variable-Length Inputs.
-## Environmental Configuration
-**Hardware**: an environment consisting of 8 NVIDIA SXM4 servers. Each node is equipped with 4 NVIDIA A100 GPUs (Ampere architecture) with 80GB and is connected to a 64-core AMD EPYC 7763 CPU. The GPUs are interconnected using NVLink, providing a communication bandwidth of 300GB/s. GPU-to-CPU communication uses PCIe 4.0, offering a bandwidth of 64GB/s.
-
-**Software**: The A100 servers are configured with CUDA Toolkit 11.7 and PyTorch 2.0.1. In addition, CMake 3.19, CUDNN 7.6.5 and NVIDIA DRIVER version 510.47.
-
-
-## Workload Configuration
-***Dataset***
-
+# FlexPipe
+## Dataset
 ```raw_datasets = load_dataset('code_search_net', 'python')```
 
 ```datasets = raw_datasets['train'].filter(lambda x: 'apache/spark' in x['repository_name'])```
 
-***Model(GPT)***
-
+## Model(GPT)
 ```class MaskedAttention(nn.Module)```
 
 ```class MaskedMultiHeadAttention(nn.Module)```
@@ -22,8 +13,7 @@
 
 ```class Block(nn.Module)```
 
-***Communication***
-
+## Communication 
 ```class CommunicationHandler(object)```
 
 ```
@@ -37,7 +27,6 @@ global_rank = int(os.environ["RANK"])
 ```
 
 ## FlexPipe
-判断是否进行Elastic，并返回弹性策略
 
 ```def is_Transfer(iter)```
 
@@ -48,3 +37,5 @@ global_rank = int(os.environ["RANK"])
 ```def __recv_update(self,model,index)```
 
 ```def recv_weight(self,model,S_R_Pair)```
+
+## Core component （Live Flexibility Mechanism）

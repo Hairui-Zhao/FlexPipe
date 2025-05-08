@@ -71,3 +71,40 @@ torchrun --nproc_per_node=$N$ \
 We need to run the above command on each node server, where $N$ denotes $N$ processes per node, $M$ denotes distributed training using several nodes, $RANK$ denotes the number of the current node in the communication domain, $IPADDR$ denotes the IP address of the master node, and $PORT$ denotes the communication port of each node.
 
 ## Run Evaluations
+
+***Figure 8***
+
+```
+cd plot_script/Figure8
+python th_seq_bert24.py
+python th_seq_bert96.py
+python th_seq_gpt13.py
+python th_seq_gpt335.py 
+```
+
+***Figure 9***
+
+```
+cd plot_script/Figure9
+python th_batch_bert24.py
+python th_batch_bert96.py
+python th_batch_gpt13.py
+python th_batch_gpt335.py 
+```
+
+***Figure 10***
+
+```
+cd plot_script/Figure10
+python cost1.py
+python cost2.py
+python cost3.py
+```
+
+***Figure 11***
+
+```
+cd plot_script/Figure11
+python algorithm1.py
+python algorithm2.py
+```

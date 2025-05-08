@@ -51,3 +51,21 @@ global_rank = int(os.environ["RANK"])
 
 ***Example Usage***
 
+Example Environment: a node with 4 GPUs, CUDA Toolkit 11.7 and PyTorch 2.0.1.
+
+```
+cd LFM
+bash run.sh
+```
+
+***Scale Expanding***
+
+```
+torchrun --nproc_per_node=$N$ \
+ --nnodes=$M$ \
+ --node_rank=$RANK$ \
+ --master_add=$IPADDR$ \
+ --master_port=$PORT$ \
+ runtime.py 
+```
+We need to run the above command on each node server, where $N$ denotes $N$ processes per node, $M$ denotes distributed training using several nodes, $RANK$ denotes the number of the current node in the communication domain, $IPADDR$ denotes the IP address of the master node, and $PORT$ denotes the communication port of each node.
